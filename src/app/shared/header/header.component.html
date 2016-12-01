@@ -1,10 +1,32 @@
-<header>
-  <a class="logo" href="#" routerLink="/" >Auth0 + Angular 2</a>
-  <button class="login-btn" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
-  
-  <ul class="user-menu" *ngIf="auth.authenticated()">
-    <li><a href="#" routerLink="/dashboard">Dashboard</a></li>
-    <li><a href="#" routerLink="/user-profile">My Profile</a></li>
-    <button class="logout-btn" (click)="auth.logout()">Log Out</button>
-  </ul>
-</header>
+<div class="row">
+  <nav class="navbar navbar-dark bg-primary">
+    <!-- Mobile Menu Button -->
+    <button class="navbar-toggler hidden-sm-up float-xl-right float-xs-right float-sm-right float-md-right float-lg-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="CollapsingNavbar2"
+      aria-expanded="false" aria-label="Toggle navigation"> &#9776;</button>
+    <!-- Logo -->
+    <a id="logo" class="navbar-brand" href="#" routerLink="/">Auth0 + Angular 2</a>
+    <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
+
+      <!-- Account Menu -->
+      <div class="nav navbar-nav float-xl-right float-xs-right float-sm-right float-md-right float-lg-right">
+
+        <div class="btn-group">
+          <!-- Login & Account Menu Buttons -->
+          <button *ngIf="auth.authenticated()" type="button" class="btn btn-danger dropdown-toggle float-xl-right float-xs-right float-sm-right float-md-right float-lg-right" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+						<img class="img-circle" width="25" height="25" [src]="profile.picture" /> {{ profile.nickname }}
+  			  </button>
+          <button class="btn btn-danger btn-margin pull-right" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+
+          <!-- Account Menu Dropdown Elements -->
+          <div class="dropdown-menu" *ngIf="auth.authenticated()">
+            <a href="#" class="dropdown-item" routerLink="/dashboard">Dashboard</a>
+            <a href="#" class="dropdown-item" routerLink="/dashboard/user-profile">My Profile</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item" (click)="auth.logout()" routerLink="/">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
