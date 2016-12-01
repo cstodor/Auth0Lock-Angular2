@@ -1,3 +1,10 @@
-<p>
-  header works!
-</p>
+<header>
+  <a class="logo" href="#" routerLink="/" >Auth0 + Angular 2</a>
+  <button class="login-btn" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+  
+  <ul class="user-menu" *ngIf="auth.authenticated()">
+    <li><a href="#" routerLink="/dashboard">Dashboard</a></li>
+    <li><a href="#" routerLink="/user-profile">My Profile</a></li>
+    <button class="logout-btn" (click)="auth.logout()">Log Out</button>
+  </ul>
+</header>
