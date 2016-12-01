@@ -1,20 +1,24 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-
 // Components
+import { DashboardComponent } from './dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MainComponent } from './pages/main/main.component';
-
 // Auth
 import { AuthGuard } from '../auth/auth.guard';
 
 const dashboardRoutes: Routes = [
     {
         path: 'dashboard',
-        component: MainComponent,
+        component: DashboardComponent,
         canActivate: [AuthGuard],
         children: [
+            {
+                path: '',
+                component: MainComponent,
+                canActivate: [AuthGuard]
+            },
             {
                 path: 'user-profile',
                 component: ProfileComponent,
