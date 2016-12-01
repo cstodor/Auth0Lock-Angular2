@@ -3,3 +3,15 @@ body {
     margin: 0;
     padding: 0;
 }
+.img-circle {
+    border-radius: 50%;
+}
+/*THUMBNAIL*/
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+.thumbnail img {
+    width: 100%;
+}
