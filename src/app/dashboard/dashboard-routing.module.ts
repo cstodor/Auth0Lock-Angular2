@@ -5,15 +5,19 @@ import { RouterModule, Routes } from '@angular/router';
 // Components
 import { DashboardComponent } from './dashboard.component';
 import { ProfileComponent } from './user/profile/profile.component';
+// Auth
+import { AuthGuard } from '../auth/auth.guard';
 
 const dashboardRoutes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent,
+        canActivate: [AuthGuard],
         children: [
             {
                 path: 'user-profile',
                 component: ProfileComponent,
+                canActivate: [AuthGuard]
             }
         ]
     }
