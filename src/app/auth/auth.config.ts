@@ -7,8 +7,8 @@ interface AuthConfiguration {
 }
 
 export const myConfig: AuthConfiguration = {
-    clientID: 'bY159CtFcxmfocFXDe4HMzTA3rKTncIF',
-    domain: 'cstodor.eu.auth0.com',
+    clientID: 'ADD_YOUR_CLIENT_ID_HERE',
+    domain: 'ADD_YOUR_AUTH0_DOMAIN_HERE',
     callbackURL: 'http://localhost:4200/',
     memberRouter: ['/dashboard'],
     responseType: 'token'
