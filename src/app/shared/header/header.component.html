@@ -12,7 +12,7 @@
 
         <div class="btn-group">
           <!-- Login & Account Menu Buttons -->
-          <button *ngIf="auth.authenticated()" type="button" class="btn btn-danger dropdown-toggle float-xl-right float-xs-right float-sm-right float-md-right float-lg-right" data-toggle="dropdown" aria-haspopup="true"
+          <button *ngIf="auth.authenticated() && profile" type="button" class="btn btn-danger dropdown-toggle float-xl-right float-xs-right float-sm-right float-md-right float-lg-right" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
 						<img class="img-circle" width="25" height="25" [src]="profile.picture" /> {{ profile.nickname }}
   			  </button>
